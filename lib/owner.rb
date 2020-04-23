@@ -2,12 +2,14 @@ class Owner
   attr_reader :species, :name
 
 
-  @@all = [ ]
+  @@all = Array.new
 
   def initialize(name,species = 'human')
     @name= name
     @species = species
-    @@all >> self 
+    @@all.push(self)
+
+
   end
 
   def say_species
@@ -15,6 +17,7 @@ class Owner
   end
 
   def self.all
+
     @@all
   end
 
